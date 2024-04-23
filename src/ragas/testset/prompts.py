@@ -27,7 +27,7 @@ reasoning_question_prompt = Prompt(
     input_keys=["question", "context"],
     output_key="output",
     output_type="str",
-    language="english",
+    language="русский",
 )
 
 
@@ -58,7 +58,7 @@ multi_context_question_prompt = Prompt(
     input_keys=["question", "context1", "context2"],
     output_key="output",
     output_type="str",
-    language="english",
+    language="русский",
 )
 
 conditional_question_prompt = Prompt(
@@ -85,7 +85,7 @@ conditional_question_prompt = Prompt(
     input_keys=["question", "context"],
     output_key="output",
     output_type="str",
-    language="english",
+    language="русский",
 )
 
 
@@ -106,7 +106,7 @@ compress_question_prompt = Prompt(
     input_keys=["question"],
     output_key="output",
     output_type="str",
-    language="english",
+    language="русский",
 )
 
 
@@ -130,7 +130,7 @@ conversational_question_prompt = Prompt(
     input_keys=["question"],
     output_key="output",
     output_type="json",
-    language="english",
+    language="русский",
 )
 
 
@@ -166,7 +166,7 @@ question_answer_prompt = Prompt(
     input_keys=["context", "question"],
     output_key="answer",
     output_type="json",
-    language="english",
+    language="русский",
 )
 
 keyphrase_extraction_prompt = Prompt(
@@ -284,7 +284,7 @@ find_relevant_context_prompt = Prompt(
     input_keys=["question", "contexts"],
     output_key="output",
     output_type="json",
-    language="english",
+    language="русский",
 )
 
 
@@ -308,7 +308,7 @@ question_rewrite_prompt = Prompt(
     input_keys=["context", "question", "feedback"],
     output_key="output",
     output_type="str",
-    language="english",
+    language="русский",
 )
 
 ### Filters
@@ -370,7 +370,7 @@ Structure your JSON output to reflect these criteria as keys with their correspo
     input_keys=["context"],
     output_key="output",
     output_type="json",
-    language="english",
+    language="русский",
 )
 
 
@@ -434,7 +434,7 @@ Provide feedback and a verdict in JSON format, including suggestions for improve
     input_keys=["question"],
     output_key="output",
     output_type="json",
-    language="english",
+    language="русский",
 )
 
 evolution_elimination_prompt = Prompt(
@@ -479,5 +479,5 @@ evolution_elimination_prompt = Prompt(
     input_keys=["question1", "question2"],
     output_key="output",
     output_type="json",
-    language="english",
+    language="русский",
 )

@@ -1,5 +1,5 @@
 sphinx
-git+https://github.com/jjmachan/sphinxawesome-theme.git
+git+https://github.com/ololopopova/ragas_ru.git
 myst-parser[linkify]
 sphinx_design
 astroid<3
