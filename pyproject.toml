@@ -1,5 +1,5 @@
 [project]
-name = "ragas"
+name = "ragas_ru"
 dependencies = [
     "numpy",
     "datasets",
