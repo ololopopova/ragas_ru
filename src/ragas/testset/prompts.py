@@ -11,7 +11,8 @@ reasoning_question_prompt = Prompt(
     1. Ensure that the rewritten question can be answered entirely from the information present in the contexts.
     2. Do not frame questions that contains more than 15 words. Use abbreviation wherever possible.
     3. Make sure the question is clear and unambiguous.
-    4. phrases like 'based on the provided context','according to the context',etc are not allowed to appear in the question.""",
+    4. phrases like 'based on the provided context','according to the context',etc are not allowed to appear in the question.
+    5. Write your answer in Russian.""",
     examples=[
         {
             "question": "What is the capital of France?",
@@ -40,7 +41,8 @@ multi_context_question_prompt = Prompt(
         2. The rewritten question must be reasonable and must be understood and responded by humans.
         3. The rewritten question must be fully answerable from information present in context1 and context2. 
         4. Read and understand both contexts and rewrite the question so that answering requires insight from both context1 and context2.
-        5. phrases like 'based on the provided context','according to the context?',etc are not allowed to appear in the question.""",
+        5. phrases like 'based on the provided context','according to the context?',etc are not allowed to appear in the question.
+        6. Write your answer in Russian.""",
     examples=[
         {
             "question": "What process turns plants green?",
@@ -69,7 +71,8 @@ conditional_question_prompt = Prompt(
         1. The rewritten question should not be longer than 25 words. Use abbreviation wherever possible.
         2. The rewritten question must be reasonable and must be understood and responded by humans.
         3. The rewritten question must be fully answerable from information present context.
-        4. phrases like 'provided context','according to the context?',etc are not allowed to appear in the question.""",
+        4. phrases like 'provided context','according to the context?',etc are not allowed to appear in the question.
+        5. Write your answer in Russian.""",
     examples=[
         {
             "question": "What is the function of the roots of a plant?",
@@ -92,7 +95,7 @@ conditional_question_prompt = Prompt(
 compress_question_prompt = Prompt(
     name="compress_question",
     instruction="""Rewrite the following question to make it more indirect and shorter while retaining the essence of the original question.
-    The goal is to create a question that conveys the same meaning but in a less direct manner. The rewritten question should shorter so use abbreviation wherever possible.""",
+    The goal is to create a question that conveys the same meaning but in a less direct manner. The rewritten question should shorter so use abbreviation wherever possible. Write your answer in Russian.""",
     examples=[
         {
             "question": "What is the distance between the Earth and the Moon?",
@@ -117,7 +120,8 @@ conversational_question_prompt = Prompt(
         1. The rewritten question should not be longer than 25 words. Use abbreviation wherever possible.
         2. The rewritten question must be reasonable and must be understood and responded by humans.
         3. The rewritten question must be fully answerable from information present context.
-        4. phrases like 'provided context','according to the context?',etc are not allowed to appear in the question.""",
+        4. phrases like 'provided context','according to the context?',etc are not allowed to appear in the question.
+        5. Write your answer in Russian.""",
     examples=[
         {
             "question": "What are the advantages and disadvantages of remote work?",
@@ -136,7 +140,7 @@ conversational_question_prompt = Prompt(
 
 question_answer_prompt = Prompt(
     name="answer_formulate",
-    instruction="""Answer the question using the information from the given context. Output verdict as '1' if answer is present '-1' if answer is not present in the context.""",
+    instruction="""Answer the question using the information from the given context. Output verdict as '1' if answer is present '-1' if answer is not present in the context. Write your answer in Russian.""",
     examples=[
         {
             "context": """Climate change is significantly influenced by human activities, notably the emission of greenhouse gases from burning fossil fuels. The increased greenhouse gas concentration in the atmosphere traps more heat, leading to global warming and changes in weather patterns.""",
@@ -171,7 +175,7 @@ question_answer_prompt = Prompt(
 
 keyphrase_extraction_prompt = Prompt(
     name="keyphrase_extraction",
-    instruction="Extract the top 3 to 5 keyphrases from the provided text, focusing on the most significant and distinctive aspects. ",
+    instruction="Extract the top 3 to 5 keyphrases from the provided text, focusing on the most significant and distinctive aspects. Write your answer in Russian.",
     examples=[
         {
             "text": "A black hole is a region of spacetime where gravity is so strong that nothing, including light and other electromagnetic waves, has enough energy to escape it. The theory of general relativity predicts that a sufficiently compact mass can deform spacetime to form a black hole.",
@@ -204,7 +208,7 @@ keyphrase_extraction_prompt = Prompt(
 
 seed_question_prompt = Prompt(
     name="seed_question",
-    instruction="Generate a question that can be fully answered from given context. The question should be formed using topic",
+    instruction="Generate a question that can be fully answered from given context. The question should be formed using topic. Write your answer in Russian.",
     examples=[
         {
             "context": "Photosynthesis in plants involves converting light energy into chemical energy, using chlorophyll and other pigments to absorb light. This process is crucial for plant growth and the production of oxygen.",
@@ -229,7 +233,7 @@ seed_question_prompt = Prompt(
 
 main_topic_extraction_prompt = Prompt(
     name="main_topic_extraction",
-    instruction="Identify and extract the two main topics discussed in depth in the given text.",
+    instruction="Identify and extract the two main topics discussed in depth in the given text. Write your answer in Russian.",
     examples=[
         {
             "text": "Blockchain technology presents a decentralized ledger that ensures the integrity and transparency of data transactions. It underpins cryptocurrencies like Bitcoin, providing a secure and immutable record of all transactions. Beyond finance, blockchain has potential applications in supply chain management, where it can streamline operations, enhance traceability, and improve fraud prevention. It allows for real-time tracking of goods and transparent sharing of data among participants.",
@@ -258,7 +262,7 @@ main_topic_extraction_prompt = Prompt(
 
 find_relevant_context_prompt = Prompt(
     name="find_relevant_context",
-    instruction="Given a question and set of contexts, find the most relevant contexts to answer the question.",
+    instruction="Given a question and set of contexts, find the most relevant contexts to answer the question. Write your answer in Russian.",
     examples=[
         {
             "question": "What is the capital of France?",
@@ -290,7 +294,7 @@ find_relevant_context_prompt = Prompt(
 
 question_rewrite_prompt = Prompt(
     name="rewrite_question",
-    instruction="""Given a context, question and feedback, rewrite the question to improve its clarity and answerability based on the feedback provided.""",
+    instruction="""Given a context, question and feedback, rewrite the question to improve its clarity and answerability based on the feedback provided. Write your answer in Russian.""",
     examples=[
         {
             "context": "The Eiffel Tower was constructed using iron and was originally intended as a temporary exhibit for the 1889 World's Fair held in Paris. Despite its initial temporary purpose, the Eiffel Tower quickly became a symbol of Parisian ingenuity and an iconic landmark of the city, attracting millions of visitors each year. The tower's design, created by Gustave Eiffel, was initially met with criticism from some French artists and intellectuals, but it has since been celebrated as a masterpiece of structural engineering and architectural design.",
@@ -344,7 +348,7 @@ clarity: Evaluate the precision and understandability of the information present
 depth: Determine the level of detailed examination and the inclusion of innovative insights within the context. A high score indicates a comprehensive and insightful analysis, while a low score suggests a superficial treatment of the topic.
 structure: Assess how well the content is organized and whether it flows logically. High scores are awarded to contexts that demonstrate coherent organization and logical progression, whereas low scores indicate a lack of structure or clarity in progression.
 relevance: Judge the pertinence of the content to the main topic, awarding high scores to contexts tightly focused on the subject without unnecessary digressions, and low scores to those that are cluttered with irrelevant information.
-Structure your JSON output to reflect these criteria as keys with their corresponding scores as values
+Structure your JSON output to reflect these criteria as keys with their corresponding scores as values. Write your answer in Russian.
     """,
     output_format_instruction=get_json_format_instructions(ContextScoring),
     examples=[
@@ -382,6 +386,7 @@ Asses the given question for clarity and answerability given enough domain knowl
 2.Clear Intent: Is it clear what type of answer or information the question seeks? The question should convey its purpose without ambiguity, allowing for a direct and relevant response.
 Based on these criteria, assign a verdict of "1" if a question is specific, independent, and has a clear intent, making it understandable and answerable based on the details provided. Assign "0" if it fails to meet one or more of these criteria due to vagueness, reliance on external references, or ambiguity in intent.
 Provide feedback and a verdict in JSON format, including suggestions for improvement if the question is deemed unclear. Highlight aspects of the question that contribute to its clarity or lack thereof, and offer advice on how it could be reframed or detailed for better understanding and answerability.
+Write your answer in Russian.
 """,
     output_format_instruction=get_json_format_instructions(QuestionFilter),
     examples=[
@@ -442,7 +447,8 @@ evolution_elimination_prompt = Prompt(
     instruction="""Check if the given two questions are equal based on following requirements:
     1. They have same constraints and requirements.
     2. They have same depth and breadth of the inquiry.
-    Output verdict as 1 if they are equal and 0 if they are not""",
+    Output verdict as 1 if they are equal and 0 if they are not.
+    Write your answer in Russian.""",
     output_format_instruction=get_json_format_instructions(EvolutionElimination),
     examples=[
         {
